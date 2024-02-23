@@ -46,35 +46,4 @@ class ArticleController extends Controller // Definizione della classe ArticleCo
         // Restituisce una risposta JSON vuota con il codice di stato HTTP 204 (No Content) per indicare che l'articolo è stato cancellato con successo.
         return response()->json(null, 204);
     }
-
-    // public function index() // Metodo per ottenere tutti gli articoli
-    // {
-    //     return Article::all(); // Restituisce tutti gli articoli presenti nel database
-    // }
-
-    // public function show($id) // Metodo per ottenere un singolo articolo
-    // {
-    //     return Article::find($id); // Restituisce l'articolo corrispondente all'ID specificato
-    // }
-
-    // public function store(Request $request) // Metodo per creare un nuovo articolo
-    // {
-    //     return Article::create($request->all()); // Crea un nuovo articolo utilizzando i dati forniti nella richiesta
-    // }
-
-    // public function update(Request $request, $id) // Metodo per aggiornare un articolo esistente
-    // {
-    //     $article = Article::findOrFail($id); // Trova l'articolo con l'ID specificato o genera un'eccezione se non trovato
-    //     $article->update($request->all()); // Aggiorna l'articolo con i dati forniti nella richiesta
-
-    //     return $article; // Restituisce l'articolo aggiornato
-    // }
-
-    // public function delete(Request $request, $id) // Metodo per eliminare un articolo
-    // {
-    //     $article = Article::findOrFail($id); // Trova l'articolo con l'ID specificato o genera un'eccezione se non trovato
-    //     $article->delete(); // Cancella l'articolo
-
-    //     return 204; // Restituisce una risposta di successo con codice 204 (No Content)
-    // }
 }

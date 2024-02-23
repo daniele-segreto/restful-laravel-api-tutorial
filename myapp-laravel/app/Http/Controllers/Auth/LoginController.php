@@ -49,4 +49,9 @@ class LoginController extends Controller
         // Restituisce una risposta JSON per confermare il logout.
         return response()->json(['data' => 'User logged out.'], 200);
     }
+
+    Auth::guard('api')->user(); // istanza dell'utente loggato
+    Auth::guard('api')->check(); // se un utente è autenticato
+    Auth::guard('api')->id(); // l'id dell'utente autenticato
+
 }

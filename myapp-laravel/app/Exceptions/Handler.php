@@ -3,8 +3,9 @@
 namespace App\Exceptions;
 
 use Exception;
-use Throwable; // Importa la classe Throwable
+use Illuminate\Auth\AuthenticationException;
 
+use Throwable; // Importa la classe Throwable
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -46,5 +47,10 @@ class Handler extends ExceptionHandler
 
         // Altrimenti, restituisci la gestione predefinita delle eccezioni.
         return parent::render($request, $exception);
+    }
+
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        return response()->json(['error' => 'Unauthenticated'], 401);
     }
 }
