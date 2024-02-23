@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -29,5 +30,23 @@ class LoginController extends Controller
 
         // Se il login fallisce, restituisci una risposta di errore.
         return $this->sendFailedLoginResponse($request);
+    }
+
+    public function logout(Request $request)
+    {
+        // Ottiene l'utente autenticato attraverso il guard 'api'.
+        $user = Auth::guard('api')->user();
+
+        // Verifica se l'utente è autenticato.
+        if ($user) {
+            // Se l'utente è autenticato, imposta il token API a null per invalidarlo.
+            $user->api_token = null;
+
+            // Salva le modifiche dell'utente nel database.
+            $user->save();
+        }
+
+        // Restituisce una risposta JSON per confermare il logout.
+        return response()->json(['data' => 'User logged out.'], 200);
     }
 }

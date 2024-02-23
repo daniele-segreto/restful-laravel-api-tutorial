@@ -33,3 +33,6 @@ Route::post('register', 'Auth\RegisterController@register');
 // Definisce una route POST per gestire le richieste di login
 // indirizzando i dati alla funzione 'login' nel controller 'Auth\LoginController'.
 Route::post('login', 'Auth\LoginController@login');
+
+// Definisce una route POST per gestire le richieste di logout, indirizzando i dati alla funzione 'logout' nel controller 'Auth\LoginController'.
+Route::post('logout', 'Auth\LoginController@logout');
