@@ -1,2 +1,4 @@
 guida: https://www.toptal.com/laravel/restful-laravel-api-tutorial
 hub: https://github.com/daniele-segreto/restful-laravel-api-tutorial
+
+modifica per testare se funziona git push
