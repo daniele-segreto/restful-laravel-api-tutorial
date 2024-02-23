@@ -29,3 +29,7 @@ Route::delete('articles/{article}', 'ArticleController@delete'); // Rotta per el
 // Definisce una rotta POST per la registrazione degli utenti, che
 // invoca il metodo register del controller Auth\RegisterController.
 Route::post('register', 'Auth\RegisterController@register');
+
+// Definisce una route POST per gestire le richieste di login
+// indirizzando i dati alla funzione 'login' nel controller 'Auth\LoginController'.
+Route::post('login', 'Auth\LoginController@login');

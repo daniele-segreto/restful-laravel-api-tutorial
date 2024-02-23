@@ -42,4 +42,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function generateToken()
+    {
+        // Genera una stringa casuale di lunghezza 60 e la assegna alla proprietà api_token dell'oggetto corrente.
+        $this->api_token = str_random(60);
+
+        // Salva l'oggetto corrente nel database.
+        $this->save();
+
+        // Restituisce il token appena generato.
+        return $this->api_token;
+    }
 }
